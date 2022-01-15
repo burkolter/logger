@@ -3,8 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Project extensions
-/target
+# Project 
+/out-tsc
+/dist
 
 # User-specific files
 *.rsuser

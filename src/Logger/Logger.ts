@@ -31,8 +31,7 @@ export class Logger {
     private intervalHolder: number = null;
     public setFlushInterval(interval: number): void {
         this.removeFlushInterval();
-
-        this.intervalHolder = setInterval(
+        this.intervalHolder = window.setInterval(
             () => {
                 this.flush(true);
             },
@@ -41,7 +40,7 @@ export class Logger {
 
     public removeFlushInterval() {
         if (this.intervalHolder > 0) {
-            clearInterval(this.intervalHolder);
+            window.clearInterval(this.intervalHolder);
             this.intervalHolder = -1;
         }
     }

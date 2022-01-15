@@ -1,0 +1,30 @@
+{
+    "name": "logger",
+    "version": "1.0.0",
+    "description": "simple and effective webclient logging",
+    "author": "Dominik Burkolter",
+    "keywords": [
+        "log",
+        "logger",
+        "gui",
+        "ajax",
+        "REST",
+        "console"
+    ],
+    "main": "build/index.js",
+    "module": "build/index.es.js",
+    "scripts": {
+        "clean": "rimraf dist",
+        "build": "npm run clean && tsc && rollup -c rollup.config.js",
+        "tsc": "tsc"
+    },
+    "repository": {},
+    "devDependencies": {
+        "@open-wc/building-rollup": "^2.0.1",
+        "deepmerge": "^4.2.2",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.64.0",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "typescript": "^4.5.4"
+    }
+}
