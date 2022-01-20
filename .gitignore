@@ -3,9 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Project 
+# Project-ignore
 /out-tsc
 /dist
+/public
 
 # User-specific files
 *.rsuser

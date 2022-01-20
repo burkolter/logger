@@ -9,7 +9,7 @@ import { IAjaxCustomHeader } from "./Logger/Writter/IAjaxCustomHeader";
 
 export { ILogWriter, AjaxWriter, IAjaxCustomHeader, ConsoleWriter, Logger, LoggerUtility, LogLevel, LogLevelExtension, Severity};
 
-// conveniance access
+// convenience access
 export function getConsoleWriter(): ILogWriter {
     return LoggerUtility.getConsoleWriter();
 }

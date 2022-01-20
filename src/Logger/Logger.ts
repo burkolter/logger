@@ -14,7 +14,7 @@ export class Logger {
     public name: string;
     public logLevel: LogLevel = LogLevelExtension.ALL;
 
-    // writters on this Logger
+    // writers on this Logger
     private writers: ILogWriter[] = [];
 
     // constructor
@@ -69,12 +69,12 @@ export class Logger {
         return this.logLevel;
     }
 
-    // handling writters
-    public addWritter(writer: ILogWriter): void {
+    // handling writers
+    public addWriter(writer: ILogWriter): void {
         this.writers.push(writer);
     }
 
-    public removeWritter(writer: ILogWriter): void {
+    public removeWriter(writer: ILogWriter): void {
         const index = this.writers.indexOf(writer, 0);
 
         if (index > -1) {
@@ -121,7 +121,7 @@ export class Logger {
             return;
         }
     
-        // create log-object and propagate to writers and parent writters
+        // create log-object and propagate to writers and parent writers
         const logEntry: LogEntry = new LogEntry(this.name, level, message, payload, callstack, this);
         this.propagateLogEntry(logEntry);
 
