@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
 
@@ -6,7 +7,10 @@ module.exports = {
     mode: 'production',
 
     // entry files
-    entry: './src/index.ts',
+    entry: {
+        "logger": './src/index.ts',
+        "logger.min": './src/index.ts'
+    },
 
     // source-map
     devtool: "source-map",
@@ -14,7 +18,7 @@ module.exports = {
     // output bundles (location)
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'logger.min.js',
+        filename: '[name].js',
         library: 'logger',
         libraryTarget: 'global'
     },
@@ -32,6 +36,15 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/,
             }
+        ]
+    },
+
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                test: /\.min.m?js(\?.*)?$/i
+            })
         ]
     },
 
