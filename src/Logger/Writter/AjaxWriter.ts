@@ -6,7 +6,7 @@ import { IAjaxCustomHeader } from "./IAjaxCustomHeader";
 
 export class AjaxWriter implements ILogWriter {
     private messageBuffer: ILogEntry[] = [];
-    private bufferSize: 20;
+    private bufferSize: number = 20;
     private forceFlushLevel: LogLevel = Severity.WARN;
 
     private targetUrl: RequestInfo;
@@ -19,6 +19,15 @@ export class AjaxWriter implements ILogWriter {
         if (customHeaders !== undefined) {
             this.customHeaders = customHeaders;
         }
+    }
+
+    // Adapt the buffer size
+    public setBufferSize(newSize: number) {
+        this.bufferSize = newSize;
+    }
+
+    public getBufferSize(): number {
+        return this.bufferSize;
     }
 
     // add default header and custom ones
