@@ -30,6 +30,15 @@ export class AjaxWriter implements ILogWriter {
         return this.bufferSize;
     }
 
+    // Adapt the force-Flush - Level
+    public setForceFlushLevel(newLevel: LogLevel) {
+        this.forceFlushLevel = newLevel;
+    }
+
+    public getForceFlushLevel(): LogLevel {
+        return this.forceFlushLevel;
+    }
+
     // add default header and custom ones
     private prepareHeaders(): Headers {
         const headers = new Headers();
